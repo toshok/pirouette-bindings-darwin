@@ -1,0 +1,17 @@
+{
+  "name": "pirouette-bindings-darwin",
+  "version": "0.1.0-alpha.0",
+  "description": "Pirouette bindings for darwin apis (OSX and iOS)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toshok/pirouette-bindings-darwin.git"
+  },
+  "author": "Chris Toshok <toshok@toshokelectic.com> (https://blog.toshokelectric.com/)",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/toshok/pirouette-bindings-darwin/issues"
+  },
+  "homepage": "https://github.com/toshok/pirouette-binding-darwins#readme",
+  "files": ["bindings"]
+}
