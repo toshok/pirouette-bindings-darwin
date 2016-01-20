@@ -6,8 +6,6 @@ import { instanceProperty, staticProperty, autoboxProperty, instanceSelector, st
 import { NSResponder } from '../foundation';
 import { NSApplicationDelegate } from 'nsapplicationdelegate';
 
-console.log("NSApplication");
-
 export let NSApplication = NSResponder.extendClass("NSApplication", () => ({
     // Getting the Application
     //
@@ -213,7 +211,6 @@ export let NSApplication = NSResponder.extendClass("NSApplication", () => ({
     // Accessing Occlusion State
     occlusionState: instanceProperty({ set: null }), // read-only
 }));
-console.log("<NSApplication");
 
 // use this instead of NSApplicationMain
 NSApplication.main = function (args) {

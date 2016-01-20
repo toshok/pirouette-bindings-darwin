@@ -244,7 +244,7 @@ export function ConformsToProtocolAttribute(obj, protocol) {
 
         let fn = obj.prototype[key];
         if (typeof (fn) === "function") {
-            console.log (`found protocol entry ${protocol._ck_register}.${key} (selector ${selector})!`);
+            //console.log (`found protocol entry ${protocol._ck_register}.${key} (selector ${selector})!`);
 
             let inst_info = instanceSelector(selector);
             if (protocol_item.returnTypeGetter) inst_info.returns(protocol_item.returnTypeGetter);
@@ -482,12 +482,12 @@ function protocolMethod(selector, required) {
     info.method = selector;
     info.required = required;
     info.returns = function (typeGetter) {
-        console.log (`setting return type for selector ${selector}`);
+        //console.log (`setting return type for selector ${selector}`);
         info.returnTypeGetter = typeGetter;
         return info;
     };
     info.params = function (typeGetter) {
-        console.log (`setting param types for selector ${selector}`);
+        //console.log (`setting param types for selector ${selector}`);
         info.paramTypesGetter = typeGetter;
         return info;
     };
@@ -633,7 +633,7 @@ export function autobox(obj, protocol) {
             ProtocolProxy.prototype[key] = value.bind(obj);
 	        let fsig = signatureFromTypeGetters(pv.returnTypeGetter, pv.paramTypesGetter);
 	        if (!fsig) fsig = pv.sig;
-	        console.log (`signature of protocol method ${key} is ${fsig}`);
+	        //console.log (`signature of protocol method ${key} is ${fsig}`);
             new SelectorAttribute(ProtocolProxy.prototype[key], pv.method, fsig);
         }
         else {
@@ -672,9 +672,9 @@ export function outlet (outletType) {
 
     outlet_info.outletType = outletType;
     outlet_info.register = function (cls, jsprop) {
-        console.log (`registering outlet property ${jsprop}`);
+        //console.log (`registering outlet property ${jsprop}`);
         let propinfo = addProperty ({ get: function() {
-			                                   console.log(`in getter for ${jsprop}, this = ${this.constructor._ck_register}, outlet type = ${outlet_info.outletType._ck_register}`);
+			                                   //console.log(`in getter for ${jsprop}, this = ${this.constructor._ck_register}, outlet type = ${outlet_info.outletType._ck_register}`);
 			                                   let ivar_val = objc_internal.getInstanceVariable(this, jsprop);
 			                                   let outlet_val = ivar_val == null ? null : new outlet_info.outletType (ivar_val);
 			                                   console.log(`   value is ${outlet_val}`);
@@ -682,13 +682,13 @@ export function outlet (outletType) {
 		                                   },
 
 				                      set: function(v) {
-				                          console.log(`in setter for ${jsprop}, this = ${this.constructor._ck_register}`);
+				                          //console.log(`in setter for ${jsprop}, this = ${this.constructor._ck_register}`);
 				                          objc_internal.setInstanceVariable(this, jsprop, v);
 				                      },
 				                      ivar: jsprop
 				                    }, true);
         propinfo.register (cls, jsprop);
-        console.log ("done");
+        //console.log ("done");
     };
 
     return outlet_info;
