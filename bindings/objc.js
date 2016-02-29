@@ -677,7 +677,7 @@ export function outlet (outletType) {
 			                                   //console.log(`in getter for ${jsprop}, this = ${this.constructor._ck_register}, outlet type = ${outlet_info.outletType._ck_register}`);
 			                                   let ivar_val = objc_internal.getInstanceVariable(this, jsprop);
 			                                   let outlet_val = ivar_val == null ? null : new outlet_info.outletType (ivar_val);
-			                                   console.log(`   value is ${outlet_val}`);
+			                                   //console.log(`   value is ${outlet_val}`);
 			                                   return outlet_val;
 		                                   },
 
