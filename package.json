@@ -1,6 +1,6 @@
 {
   "name": "pirouette-bindings-darwin",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0",
   "description": "Pirouette bindings for darwin apis (OSX and iOS)",
   "main": "index.js",
   "repository": {
